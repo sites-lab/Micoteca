@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terasa Baraka | București</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset și variabile */
+        :root {
+            --primary: #1a472a;
+            --secondary: #d4af37;
+            --accent: #8b4513;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: white;
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Meniu Section */
+        .menu {
+            background-color: white;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 25px;
+            margin: 0 10px 10px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-title h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .price {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        /* Despre Noi Section */
+        .about {
+            background: linear-gradient(to right, var(--light) 50%, white 50%);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            text-align: left;
+        }
+
+        .about-content h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+
+        /* Galerie Section */
+        .gallery {
+            background-color: var(--light);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Recenzii Section */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial:after {
+            content: ''';
+            position: absolute;
+            bottom: -20px;
+            left: 40px;
+            border-width: 20px 20px 0;
+            border-style: solid;
+            border-color: var(--light) transparent transparent;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2:after {
+            background: var(--secondary);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-right: 20px;
+            width: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-col p, .footer-col a {
+            color: #bbb;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about {
+                background: var(--light);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float" id="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                Terasa Baraka
+            </a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#acasa">Acasă</a></li>
+                    <li><a href="#meniu">Meniu</a></li>
+                    <li><a href="#despre">Despre Noi</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+        <div class="container hero-content">
+            <h1>Bun venit la Terasa Baraka</h1>
+            <p>Oază de liniște și savoare în inima Bucureștiului</p>
+            <div class="hero-btns">
+                <a href="#meniu" class="btn">Vezi Meniul</a>
+                <a href="#contact" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Rezervă prin WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meniu Section -->
+    <section class="menu" id="meniu">
+        <div class="container">
+            <h2>Meniul Nostru</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="aperitive">Aperitive</button>
+                <button class="category-btn" data-category="feluri-principale">Feluri Principale</button>
+                <button class="category-btn" data-category="desert">Desert</button>
+                <button class="category-btn" data-category="bauturi">Băuturi</button>
+            </div>
+            <div class="menu-items">
+                <!-- Aperitive -->
+                <div class="menu-item" data-category="aperitive">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Bruschete cu Roșii</h3>
+                            <span class="price">25 RON</span>
+                        </div>
+                        <p>Pâine prăjită cu roșii proaspete, busuioc și ulei de măsline</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="aperitive">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1598214886806-c87b84b7078b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Platou de Brânzeturi</h3>
+                            <span class="price">45 RON</span>
+                        </div>
+                        <p>Selecție de brânzeturi românești și internaționale cu nuci și miere</p>
+                    </div>
+                </div>
+                <!-- Feluri Principale -->
+                <div class="menu-item" data-category="feluri-principale">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Friptură de Vită</h3>
+                            <span class="price">75 RON</span>
+                        </div>
+                        <p>Friptură de vită cu garnitură de legume la grătar și piure de cartofi</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="feluri-principale">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Somon la Grătar</h3>
+                            <span class="price">65 RON</span>
+                        </div>
+                        <p>File de somon la grătar cu sos de lămâie și sparanghel</p>
+                    </div>
+                </div>
+                <!-- Desert -->
+                <div class="menu-item" data-category="desert">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Tiramisu</h3>
+                            <span class="price">22 RON</span>
+                        </div>
+                        <p>Clasic desert italian cu mascarpone și cafea</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desert">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Clătite cu Ciocolată</h3>
+                            <span class="price">18 RON</span>
+                        </div>
+                        <p>Clătite umplute cu ciocolată topită și frișcă</p>
+                    </div>
+                </div>
+                <!-- Băuturi -->
+                <div class="menu-item" data-category="bauturi">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Cocktail Baraka</h3>
+                            <span class="price">28 RON</span>
+                        </div>
+                        <p>Specialitatea casei - gin, sirop de soc, lămâie și mentă</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="bauturi">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Vin Roșu Sec</h3>
+                            <span class="price">35 RON</span>
+                        </div>
+                        <p>Vin roșu românesc de calitate superioară</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Despre Noi Section -->
+    <section class="about" id="despre">
+        <div class="container about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Terasa Baraka interior">
+            </div>
+            <div class="about-content">
+                <h2>Despre Noi</h2>
+                <p>Terasa Baraka este un loc special în inima Bucureștiului, unde tradiția se întâlnește cu inovația. Înființată în 2015, am devenit rapid un punct de referință pentru iubitorii de mâncăruri de calitate într-un ambient plin de farmec.</p>
+                <p>Ne mândrim cu ingrediente proaspete și de sezon, provenite de la producători locali, iar bucătarii noștri transformă aceste ingrediente în preparate care să vă încânte simțurile.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                            <h4>Bucătărie Autentică</h4>
+                            <p>Preparate tradiționale cu un twist modern</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <div>
+                            <h4>Selecție de Vinuri</h4>
+                            <p>Peste 50 de sortimente de vinuri românești și internaționale</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <h4>Ingrediente Proaspete</h4>
+                            <p>Toate ingredientele sunt proaspete și de sezon</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-music"></i>
+                        <div>
+                            <h4>Atmosferă Plăcută</h4>
+                            <p>Muzică live în weekend-uri și evenimente tematice</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-whatsapp" style="margin-top: 30px;">
+                    <i class="fab fa-whatsapp"></i> Rezervă o masă
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Section -->
+    <section class="gallery" id="galerie">
+        <div class="container">
+            <h2>Galerie Foto</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Terasa Baraka">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Interior restaurant">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578474846611-2c0e1b0c8a30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Preparate culinare">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Meniul restaurantului">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Preparate gourmet">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Evenimente speciale">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recenzii Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ce Spun Clienții Noștri</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Am fost impresionat de calitatea serviciilor și de atmosfera plăcută. Mâncarea a fost delicioasă, iar personalul foarte amabil. Cu siguranță voi reveni!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andrei Popescu">
+                        </div>
+                        <div class="author-info">
+                            <h4>Andrei Popescu</h4>
+                            <p>Client fidel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Terasa Baraka este locul meu preferat pentru cină în oraș. Meniul este divers, iar preparatele sunt mereu proaspete și gustoase. Recomand cu căldură!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elena Ionescu">
+                        </div>
+                        <div class="author-info">
+                            <h4>Elena Ionescu</h4>
+                            <p>Clientă frecventă</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact & Rezervări</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Locație</h3>
+                            <p>Șoseaua Nordului, Parcul Herăstrău, București</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p>+40 729 552 767</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@terasabaraka.ro</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Program</h3>
+                            <p>Luni - Duminică: 12:00 - 00:00</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-whatsapp" id="contact-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Rezervă prin WhatsApp
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <form id="reservation-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Numele dvs." required id="reservation-name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required id="reservation-email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Telefon" required id="reservation-phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" required id="reservation-date">
+                        </div>
+                        <div class="form-group">
+                            <input type="time" class="form-control" required id="reservation-time">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Număr de persoane" min="1" required id="reservation-people">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Mesaj (opțional)" id="reservation-message"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-whatsapp" id="form-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Trimite prin WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Terasa Baraka</h3>
+                    <p>Oază de liniște și savoare în inima Bucureștiului. Vă așteptăm să descoperiți experiența noastră culinară.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Link-uri Rapide</h3>
+                    <a href="#acasa">Acasă</a>
+                    <a href="#meniu">Meniu</a>
+                    <a href="#despre">Despre Noi</a>
+                    <a href="#galerie">Galerie</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Program</h3>
+                    <p>Luni - Vineri: 12:00 - 00:00</p>
+                    <p>Sâmbătă: 12:00 - 02:00</p>
+                    <p>Duminică: 12:00 - 00:00</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Abonați-vă pentru a primi noutăți și oferte speciale.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Email-ul dvs." required>
+                        <button type="submit" class="btn" style="margin-top: 10px; width: 100%;">Abonează-te</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Terasa Baraka. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Menu category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide menu items based on category
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav ul');
+            
+            mobileMenu.addEventListener('click', function() {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            // WhatsApp functionality
+            const phoneNumber = "40729552767";
+            
+            function generateWhatsAppMessage() {
+                const name = document.getElementById('reservation-name').value || '[Nu este specificat]';
+                const email = document.getElementById('reservation-email').value || '[Nu este specificat]';
+                const phone = document.getElementById('reservation-phone').value || '[Nu este specificat]';
+                const date = document.getElementById('reservation-date').value || '[Nu este specificat]';
+                const time = document.getElementById('reservation-time').value || '[Nu este specificat]';
+                const people = document.getElementById('reservation-people').value || '[Nu este specificat]';
+                const message = document.getElementById('reservation-message').value || '[Fără mesaj suplimentar]';
+                
+                return `🍽️ *REZERVARE TERASA BARAKA* 🍽️
+
+👤 *Nume:* ${name}
+📧 *Email:* ${email}
+📞 *Telefon:* ${phone}
+
+🗓️ *Data rezervării:* ${date}
+⏰ *Ora:* ${time}
+👥 *Număr de persoane:* ${people}
+
+💬 *Mesaj suplimentar:*
+${message}
+
+_Vă rugăm să confirmați rezervarea._ 🙏`;
+            }
+            
+            // WhatsApp float button
+            const whatsappFloat = document.getElementById('whatsapp-float');
+            whatsappFloat.addEventListener('click', function(e) {
+                e.preventDefault();
+                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Terasa Baraka. Vă rog să-mi oferiți mai multe informații. 🍽️");
+                window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            });
+            
+            // Contact WhatsApp button
+            const contactWhatsApp = document.getElementById('contact-whatsapp');
+            contactWhatsApp.addEventListener('click', function(e) {
+                e.preventDefault();
+                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Terasa Baraka. Vă rog să-mi oferiți mai multe informații. 🍽️");
+                window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            });
+            
+            // Form WhatsApp button
+            const formWhatsApp = document.getElementById('form-whatsapp');
+            formWhatsApp.addEventListener('click', function() {
+                const message = generateWhatsAppMessage();
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Vă mulțumim pentru abonare!');
+                newsletterForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
