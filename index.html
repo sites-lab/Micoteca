@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terasa Baraka | București</title>
+    <title>Micoteca | Restaurant București</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset și variabile */
         :root {
-            --primary: #1a472a;
-            --secondary: #d4af37;
-            --accent: #8b4513;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --text: #333333;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #F4A460;
+            --light: #FFF8DC;
+            --dark: #5D4037;
+            --text: #4E342E;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -49,7 +49,7 @@
 
         h1, h2, h3, h4 {
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--dark);
             font-weight: 600;
         }
 
@@ -209,7 +209,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -757,8 +757,8 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-utensils"></i>
-                Terasa Baraka
+                <i class="fas fa-cheese"></i>
+                Micoteca
             </a>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -778,8 +778,8 @@
     <!-- Hero Section -->
     <section class="hero" id="acasa">
         <div class="container hero-content">
-            <h1>Bun venit la Terasa Baraka</h1>
-            <p>Oază de liniște și savoare în inima Bucureștiului</p>
+            <h1>Bun venit la Micoteca</h1>
+            <p>Experiențe culinare autentice în inima Bucureștiului</p>
             <div class="hero-btns">
                 <a href="#meniu" class="btn">Vezi Meniul</a>
                 <a href="#contact" class="btn btn-whatsapp">
@@ -795,9 +795,9 @@
             <h2>Meniul Nostru</h2>
             <div class="menu-categories">
                 <button class="category-btn active" data-category="aperitive">Aperitive</button>
-                <button class="category-btn" data-category="feluri-principale">Feluri Principale</button>
+                <button class="category-btn" data-category="specialitati">Specialități</button>
+                <button class="category-btn" data-category="brunch">Brunch</button>
                 <button class="category-btn" data-category="desert">Desert</button>
-                <button class="category-btn" data-category="bauturi">Băuturi</button>
             </div>
             <div class="menu-items">
                 <!-- Aperitive -->
@@ -821,8 +821,8 @@
                         <p>Selecție de brânzeturi românești și internaționale cu nuci și miere</p>
                     </div>
                 </div>
-                <!-- Feluri Principale -->
-                <div class="menu-item" data-category="feluri-principale">
+                <!-- Specialități -->
+                <div class="menu-item" data-category="specialitati">
                     <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
                     <div class="menu-item-content">
                         <div class="menu-item-title">
@@ -832,7 +832,7 @@
                         <p>Friptură de vită cu garnitură de legume la grătar și piure de cartofi</p>
                     </div>
                 </div>
-                <div class="menu-item" data-category="feluri-principale">
+                <div class="menu-item" data-category="specialitati">
                     <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
                     <div class="menu-item-content">
                         <div class="menu-item-title">
@@ -840,6 +840,27 @@
                             <span class="price">65 RON</span>
                         </div>
                         <p>File de somon la grătar cu sos de lămâie și sparanghel</p>
+                    </div>
+                </div>
+                <!-- Brunch -->
+                <div class="menu-item" data-category="brunch">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Omletă cu Ciuperci</h3>
+                            <span class="price">28 RON</span>
+                        </div>
+                        <p>Omletă pufoasă cu ciuperci proaspete și brânză</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="brunch">
+                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Avocado Toast</h3>
+                            <span class="price">32 RON</span>
+                        </div>
+                        <p>Pâine integrală cu avocado, ou ochi și semințe</p>
                     </div>
                 </div>
                 <!-- Desert -->
@@ -863,27 +884,6 @@
                         <p>Clătite umplute cu ciocolată topită și frișcă</p>
                     </div>
                 </div>
-                <!-- Băuturi -->
-                <div class="menu-item" data-category="bauturi">
-                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Cocktail Baraka</h3>
-                            <span class="price">28 RON</span>
-                        </div>
-                        <p>Specialitatea casei - gin, sirop de soc, lămâie și mentă</p>
-                    </div>
-                </div>
-                <div class="menu-item" data-category="bauturi">
-                    <div class="menu-item-img" style="background-image: url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Vin Roșu Sec</h3>
-                            <span class="price">35 RON</span>
-                        </div>
-                        <p>Vin roșu românesc de calitate superioară</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -892,12 +892,12 @@
     <section class="about" id="despre">
         <div class="container about-container">
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Terasa Baraka interior">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Micoteca interior">
             </div>
             <div class="about-content">
                 <h2>Despre Noi</h2>
-                <p>Terasa Baraka este un loc special în inima Bucureștiului, unde tradiția se întâlnește cu inovația. Înființată în 2015, am devenit rapid un punct de referință pentru iubitorii de mâncăruri de calitate într-un ambient plin de farmec.</p>
-                <p>Ne mândrim cu ingrediente proaspete și de sezon, provenite de la producători locali, iar bucătarii noștri transformă aceste ingrediente în preparate care să vă încânte simțurile.</p>
+                <p>Micoteca este un restaurant modern care aduce în prim-plan aromele autentice ale bucătăriei internaționale, cu o atenție deosebită pentru ingredientele proaspete și preparatele handmade.</p>
+                <p>Am creat un spațiu plin de căldură și farmec, unde fiecare masă devine o experiență memorabilă. Meniul nostru este diversificat, oferind atât preparate tradiționale, cât și inovații culinare.</p>
                 <div class="features">
                     <div class="feature">
                         <i class="fas fa-utensils"></i>
@@ -941,7 +941,7 @@
             <h2>Galerie Foto</h2>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Terasa Baraka">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Micoteca">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -1001,7 +1001,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Terasa Baraka este locul meu preferat pentru cină în oraș. Meniul este divers, iar preparatele sunt mereu proaspete și gustoase. Recomand cu căldură!"</p>
+                        <p>"Micoteca este locul meu preferat pentru cină în oraș. Meniul este divers, iar preparatele sunt mereu proaspete și gustoase. Recomand cu căldură!"</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1041,7 +1041,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>contact@terasabaraka.ro</p>
+                            <p>contact@micoteca.ro</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -1092,8 +1092,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Terasa Baraka</h3>
-                    <p>Oază de liniște și savoare în inima Bucureștiului. Vă așteptăm să descoperiți experiența noastră culinară.</p>
+                    <h3>Micoteca</h3>
+                    <p>Experiențe culinare autentice în inima Bucureștiului. Vă așteptăm să descoperiți preparatele noastre delicioase.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1124,7 +1124,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Terasa Baraka. Toate drepturile rezervate.</p>
+                <p>&copy; 2023 Micoteca. Toate drepturile rezervate.</p>
             </div>
         </div>
     </footer>
@@ -1186,7 +1186,7 @@
                 const people = document.getElementById('reservation-people').value || '[Nu este specificat]';
                 const message = document.getElementById('reservation-message').value || '[Fără mesaj suplimentar]';
                 
-                return `🍽️ *REZERVARE TERASA BARAKA* 🍽️
+                return `🍽️ *REZERVARE MICOTECA* 🍽️
 
 👤 *Nume:* ${name}
 📧 *Email:* ${email}
@@ -1206,7 +1206,7 @@ _Vă rugăm să confirmați rezervarea._ 🙏`;
             const whatsappFloat = document.getElementById('whatsapp-float');
             whatsappFloat.addEventListener('click', function(e) {
                 e.preventDefault();
-                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Terasa Baraka. Vă rog să-mi oferiți mai multe informații. 🍽️");
+                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Micoteca. Vă rog să-mi oferiți mai multe informații. 🍽️");
                 window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
             });
             
@@ -1214,7 +1214,7 @@ _Vă rugăm să confirmați rezervarea._ 🙏`;
             const contactWhatsApp = document.getElementById('contact-whatsapp');
             contactWhatsApp.addEventListener('click', function(e) {
                 e.preventDefault();
-                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Terasa Baraka. Vă rog să-mi oferiți mai multe informații. 🍽️");
+                const message = encodeURIComponent("Bună ziua! 😊 Aș dori să fac o rezervare la Micoteca. Vă rog să-mi oferiți mai multe informații. 🍽️");
                 window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
             });
             
